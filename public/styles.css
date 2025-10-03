@@ -1,12 +1,22 @@
 /* 
     Root 
 */
+:root {
+    --font-main: 'Inter', Roboto;
+
+    --bg-color: #f3f1f1;
+}
 
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #f3f1f1;
+    background-color: var(--bg-color);
 }
+body {
+    font-family: 'Roboto', sans-serif;
+}
+body { font-size: 16px; line-height: 1.5; }
+header h1 { font-size: 2rem; line-height: 1; }
 
 /* 
     Content
@@ -15,11 +25,33 @@ html, body {
 /* Header */
 
 header {
-    position: sticky;
+    width: 100%;
+    position: absolute;
     top: 0;
+    left: 0;
     padding: 10px 16px;
     z-index: 1000;
+
+    background-color: transparent;
+    color: white;
+
+    transition: color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
+
+header.scrolled {
+    position: fixed;
     background-color: #f3f1f1;
+    color: black;
+}
+
+header h1 {
+    font-family: var(--title-font, 'Oswald', sans-serif);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 /* Hero */
@@ -34,13 +66,46 @@ header {
     position: relative;
 }
 
-.hero-text {
+.hero-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #f3f1f1 100%);
+    pointer-events: none;
+}
+
+.hero-image .hero-logo {
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -100%);
-    color: white;
+    transform: translate(-50%, -75%);
+}
+
+.hero-image .hero-logo img {
+    width: 500px;
+    height: auto;
+}
+
+/* Blurb */
+.blurb {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.blurb .info {
+    flex: 1;
+    min-width: 0;
+    margin: 20px;
+    box-sizing: border-box;
 }
 
 /* Button Bar */
@@ -50,6 +115,13 @@ header {
     gap: 5px;
     margin: 2rem auto;
     max-width: 1300px;
+}
+
+@media (max-width: 600px) {
+    .button-bar {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .button-bar button {
@@ -73,5 +145,82 @@ header {
 
 .button-bar button:hover {
     transform: scale(1.05);
+}
+
+/* Portfolio */
+.portfolio {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.portfolio h1 {
+    text-align: center;
+}
+
+.collapse-box {
+    display: flex;
+    flex-direction: column-reverse;
+
+    overflow: hidden;
+    max-height: 240px;
+    transition: max-height 0.5s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.collapse-box .title {
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.collapse-box .title::after {
+    content: "▼";
+    font-size: 0.8rem;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.collapse-box:hover .title::after {
+    transform: rotate(180deg);
+}
+
+.collapse-box:hover {
+    max-height: 600px;
+}
+
+.collapse-box .content {
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 20px;
+    padding: 10px 15px;
+}
+
+.collapse-box .content img {
+  width: 40vw;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  flex: 0 0 auto;
+}
+
+.collapse-box .content .info {
+    flex: 1;
+    font-size: 1.5rem;
+}
+
+.collapse-box .content .info p {
+    font-size: 1.5rem;
+}
+
+.filler {
+    height: 300px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
