@@ -20,16 +20,15 @@
     <!-- ===================================================== CONTENT ======================================================= -->
     <body>
 
-        <!-- HEADER -->
-        <header id="site-header">
-            <div class="header-logo">
-                <img src="media/photos/Logo 2.png">
-            </div>
-            <div class="header-text">
-                <h1>Atlantic Construction & Management, Inc.</h1>
-                <p>"LISTEN closely, LEAD with purpose, and DELIVER with reliability"</p>
-            </div>
-        </header>
+        <!-- FETCH HEADER-->
+        <div id="header-container"></div>
+        <script>
+            fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+        </script>
 
 
         <!-- HERO -->
@@ -43,9 +42,12 @@
             </div>
             <div class="carousel-button next">&gt;</div>
             <div class="carousel-button prev">&lt;</div>
+            <div id="scroll-indicator">
+                <div class="arrow">&#x2193;</div>
+            </div>
         </div>
 
-        <!-- BLURB -->
+        <!-- BLURB 
         <div class="blurb">
             <div class="info">
                 <h2>Our History</h2>
@@ -72,6 +74,7 @@
                 </p>
             </div> 
         </div> 
+        -->
 
         <!-- BUTTON BAR -->
         <div class="button-bar">
@@ -99,9 +102,22 @@
                     <line x1="60" y1="55" x2="60" y2="85"/>
                     </g>
                 </svg>
-                <p>Our Mission</p>
+                <p>About Us</p>
             </button>
-
+            
+            <button id="project-portfolio">
+                <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" aria-label="House Icon">
+                    <g fill="none" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 70 L70 30 L120 70" />
+                        <rect x="35" y="70" width="70" height="50" />
+                        <rect x="65" y="90" width="20" height="30" />
+                        <rect x="45" y="80" width="15" height="15" />
+                        <rect x="80" y="80" width="15" height="15" />
+                        <rect x="85" y="35" width="10" height="15" />
+                    </g>
+                </svg>
+                <p>Our Projects</p>
+            </button>
 
             <button id="contact-us">
                 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Contact icon">
@@ -110,67 +126,86 @@
                     <path d="M20 30 L60 65 L100 30" />
                     </g>
                 </svg>
-                <p>Contact Us</p>
+                <p>Contact</p>
             </button>
         </div>
 
         <!-- PORTFOLIO -->
         <div class="portfolio">
-            <h1>Our Projects</h1>
-            
+            <h1>Highlighted Projects</h1>
             <!--COLLAPSE BOXES -->
-
             <div class="collapse-box">
-                <h2 class="title">Manchester Essex</h2>
+                <h2 class="title">John B. DeValles Elementary School</h2>
                 <div class="content">
-                    <img src="media/photos/Manchester_Essex/D2879429.jpg">
+                    <img src="media/resources/portfolio/Devalles_Photos/1.png">
                     <div class="info">
-                        <h2>Fun Fact</h2>
-                        <p>We helped over 1000 people with this project</p>
+                        <h2>Work</h2>
+                        <p>
+                            We helped the City explore how best to expand and modernize the school—studying 
+                            different sites and building options to support growing enrollment 
+                            while still keeping the school rooted in the neighborhood community.
+                        </p>
                     </div>
                     <div class="info">
-                        <h2>Testimonial</h2>
-                        <p>"This is a testimonial from a client!"</p>
+                        <h2>Impact</h2>
+                        <p>This project will bring a modern, healthy, and 
+                            sustainable school to local families—cutting energy use dramatically, 
+                            aiming for Net Zero, and creating a long-term benefit 
+                            for students, taxpayers, and the environment.</p>
                     </div>
                 </div>
             </div>
 
             <div class="collapse-box">
-                <h2 class="title">Dedham Senior Center</h2>
+                <h2 class="title">Leahy Elementary School</h2>
                 <div class="content">
-                    <img src="media/photos/Dedham_Sr_Ctr/A37I8361-Edit.jpg">
+                    <img src="media/resources/portfolio/Leahy_Photos/0.jpg">
                     <div class="info">
-                        <h2>Fun Fact</h2>
-                        <p>We helped over 1000 people with this project</p>
+                        <h2>Work</h2>
+                        <p>We supported the creation of a new, modern K–8 school by 
+                            managing construction on a tight urban site, 
+                            coordinating phased demolition, 
+                            and working closely with the neighborhood to 
+                            keep the project moving smoothly and on schedule.
+                        </p>
                     </div>
                     <div class="info">
-                        <h2>Testimonial</h2>
-                        <p>"This is a testimonial from a client!"</p>
+                        <h2>Impact</h2>
+                        <p>
+                            This new school will bring a vibrant, inclusive learning environment to 
+                            over 1,000 students—complete with innovative classroom spaces, 
+                            arts and STEM programs, accessible rooftop play areas, and community amenities—enhancing 
+                            educational opportunities for families for years to come.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="collapse-box">
-                <h2 class="title">Winchendon Community Park</h2>
+                <h2 class="title">Shaker Lane Elementary School</h2>
                 <div class="content">
-                    <img src="media/photos/Winchendon_Community_Park/IMG_8600.jpg">
+                    <img src="media/resources/portfolio/Shaker_Lane_Photos/1.png">
                     <div class="info">
-                        <h2>Fun Fact</h2>
-                        <p>We helped over 1000 people with this project</p>
+                        <h2>Work</h2>
+                        <p>
+                            We are partnering with the Town to guide the planning and construction of a new state-of-the-art elementary 
+                            school—overseeing design development, coordinating logistics for replacing the existing building, 
+                            and ensuring the project meets educational goals and MSBA standards.
+                        </p>
                     </div>
                     <div class="info">
-                        <h2>Testimonial</h2>
-                        <p>"This is a testimonial from a client!"</p>
+                        <h2>Impact</h2>
+                        <p>
+                            This new school will create a welcoming, future-ready learning environment for Littleton’s youngest students, 
+                            with dedicated spaces for arts, play, and early childhood development—while improving safety, 
+                            traffic flow, and community access for generations to come.
+                        </p>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <div class="filler"></div>
         <script src="main.js"></script>
     </body>
-
-
 </html>

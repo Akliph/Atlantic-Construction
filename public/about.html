@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- METADATA -->
+    <head>
+        <meta charset="utf-8">
+        <title>Atlantic Construction & Management, Inc.</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>    
+
+    <!-- ===================================================== CONTENT ======================================================= -->
+    <body>
+
+        <!-- FETCH HEADER-->
+        <div id="header-container"></div>
+        <script>
+            fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+        </script>
+
+
+        <div class="about-company">
+            <h1>About Atlantic</h1>
+            <p>
+                Founded in 2010 by Suresh Bhatia, Atlantic is a certified Minority Business Enterprise
+                (MBE) specializing in Owner’s Project Management (OPM) for public sector
+                construction projects across Massachusetts. Our mission is to deliver exceptional OPM
+                services with integrity — ensuring that every publicly funded project is completed on
+                time, on budget, and to the highest standards of quality and transparency.
+                We have extensive experience with Massachusetts public procurement requirements,
+                having managed taxpayer-funded projects since our inception. Even before founding
+                Atlantic, Mr. Bhatia delivered MSBA/SBA school projects as a General Contractor,
+                providing our firm with a well-rounded understanding of both the owner’s and builder’s
+                perspectives.
+                Selecting an OPM is more than hiring a consultant — it’s choosing a strategic partner
+                who can integrate community engagement, financial planning, stakeholder coordination,
+                procurement, and long-term project oversight into one cohesive process.
+                Our leadership team — Project Director Suresh Bhatia and Senior Project Manager
+                Jennifer dos Santos — are career project management professionals with decades of
+                experience guiding complex public projects. Jennifer brings valuable insight from her
+                work in a design, commissioning and project management firm and is especially skilled
+                at building trust and consensus among diverse stakeholder groups, from municipal
+                leaders to community members.
+            </p>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

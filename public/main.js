@@ -72,13 +72,39 @@ prevBtn.addEventListener("click", () => {
     }
 });
 
-
 /*
-    Scrollable Header
+    Scroll Indicator
 */
-const header = document.querySelector("header");
+
+const scrollIndicator = document.getElementById("scroll-indicator");
 
 window.addEventListener("scroll", () => {
-    if(window.scrollY > 0) {header.classList.add("scrolled")}
-    else {header.classList.remove("scrolled");}
+    const fadeStart = 0;
+    const fadeEnd = 300; 
+    let opacity = 1 - window.scrollY / fadeEnd;
+    if (opacity < 0) opacity = 0;
+    scrollIndicator.style.opacity = opacity;
 });
+
+/*
+    Button Routing
+*/
+let btn;
+btn = document.getElementById("our-team");
+btn.onclick = () => {
+    location.href = "team.html"
+};
+
+btn = document.getElementById("about");
+btn.onclick = () => {
+    location.href = "about.html"
+};
+
+btn = document.getElementById("contact-us");
+btn.onclick = () => {
+    location.href = "contact.html"
+};
+btn = document.getElementById("project-portfolio");
+btn.onclick = () => {
+    location.href = "projects.html"
+};
