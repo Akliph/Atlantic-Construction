@@ -222,11 +222,6 @@ header {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.collapse-start {
-    max-height: 600px;
-
-}
-
 .collapse-box .title {
     text-align: left;
     padding-left: 3rem;
@@ -240,12 +235,25 @@ header {
     display: inline-block;
 }
 
-.collapse-box:hover .title::after {
-    transform: rotate(180deg);
+.collapse-start {
+    max-height: 600px;
 }
 
-.collapse-box:hover {
-    max-height: 600px;
+.collapse-start .title::after{
+    content: "";
+    font-size: 0.8rem;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+
+.collapse-box.active {
+  max-height: 800px;
+}
+
+.collapse-box.active .title::after {
+  transform: rotate(180deg);
 }
 
 .collapse-box .content {
