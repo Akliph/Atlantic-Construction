@@ -15,29 +15,52 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 
+    <style>
+    .hero-carousel {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+    .header-logo img {
+        width: 500px;
+        height: auto;
+        display: block;
+    }
+    </style>
     </head>    
 
     <!-- ===================================================== CONTENT ======================================================= -->
     <body>
-
     <div class="filler"></div>
     <a href="index.html">header 1</a>
     <a href="header1.html">header 2</a>
     <a href="header2.html">header 3</a>
 
-        <!-- FETCH HEADER-->
-        <div id="header-container"></div>
-        <script>
-            fetch("header.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
-            });
-        </script>
-
+    <header id="site-header">
+        <a href="/">
+        </a>
+        </div>
+        <div class="header-text">
+            <h1>Atlantic Construction & Management, Inc.</h1>
+            <p>An SDO-certified MBE firm</p>
+        </div>
+    </header>
 
         <!-- HERO -->
         <div class="hero-carousel"> 
+
+            <div class="header-logo">
+                <img src="media/photos/logo_transparent_1500.png">
+            </div>
+
             <div class="carousel-track">
                 <div class="carousel-slide" style="background-image: url('media/hero/Hero_1.jpeg');"></div>
                 <div class="carousel-slide" style="background-image: url('media/hero/Hero_2.jpeg');"></div>
@@ -48,6 +71,7 @@
             <div class="carousel-button next">&gt;</div>
             <div class="carousel-button prev">&lt;</div>
         </div>
+
 
         <!-- BLURB 
         <div class="blurb">

@@ -19,22 +19,24 @@
 
     <!-- ===================================================== CONTENT ======================================================= -->
     <body>
-
+        
     <div class="filler"></div>
     <a href="index.html">header 1</a>
     <a href="header1.html">header 2</a>
     <a href="header2.html">header 3</a>
 
-        <!-- FETCH HEADER-->
-        <div id="header-container"></div>
-        <script>
-            fetch("header.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
-            });
-        </script>
-
+    <header id="site-header">
+        <a href="/">
+            <div class="header-logo">
+                <img src="media/photos/Logo 2.png" style="width: 175px; height: auto;">
+            </div>
+        </a>
+        </div>
+        <div class="header-text">
+            <h1>Atlantic Construction & Management, Inc.</h1>
+            <p>"LISTEN closely, LEAD with purpose, and DELIVER with reliability"</p>
+        </div>
+    </header>  
 
         <!-- HERO -->
         <div class="hero-carousel"> 

@@ -73,20 +73,6 @@ prevBtn.addEventListener("click", () => {
 });
 
 /*
-    Scroll Indicator
-*/
-
-const scrollIndicator = document.getElementById("scroll-indicator");
-
-window.addEventListener("scroll", () => {
-    const fadeStart = 0;
-    const fadeEnd = 300; 
-    let opacity = 1 - window.scrollY / fadeEnd;
-    if (opacity < 0) opacity = 0;
-    scrollIndicator.style.opacity = opacity;
-});
-
-/*
     Button Routing
 */
 let btn;
